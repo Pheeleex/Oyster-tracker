@@ -1,38 +1,438 @@
-.App {
-  text-align: center;
+body {
+  background-color: rgb(2, 20, 20) !important;
+  color:antiquewhite;
+  font-family: 'Nunito', sans-serif;
+   min-height: 100%;
+   min-width: 100%;
+   margin: 0;
+   display: flex;
+  flex-direction: column;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Auth Page */
+
+.auth-page{
+display: flex;
+margin-right: 2rem;
+height: 50%;
+width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.auth-page h1{
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: 'Jost', sans-serif;
+  line-height: 1.3;
+}
+
+.Authentication{
+  margin-top: 2rem;
+  margin-left: auto;
+  padding: 4rem;
+  width: 50%;
+  height: fit-content;
+}
+
+.Authentication p{
+  font-size: 1.2rem;
+}
+
+.illustrate{
+  margin-top: 2.5%;
+  height: fit-content;
+  width: 90%;
+  position: relative;
+}
+
+.illustrate img{
+  width: 100%
+}
+
+.auth-page-2{
+  margin-top: 10rem;
+  margin-left: 3rem;
+  margin-right: 2rem;
+  height: fit-content
   }
+
+  .auth-page-2 h1{
+    font-size: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+
+/*Register Page */
+.top{
+  margin: 3rem;
+}
+/* navbar */
+header nav {
+  display: flex;
+  /*gap: 16px;*/
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1%;
+}
+.logo h3 {
+  margin: 0;
+  border-bottom: 3px solid var(--primary);
+}
+header nav a{
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 4px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo{
+  display: flex;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+
+.bi-cash-coin{
+  font-size: 2.0rem;
+}
+
+.logo h3{
+  margin-top: 5px;
+  margin-left: 0.71rem;
+  font-size: 1.2rem;
+}
+
+
+
+/**Dashboard**/
+
+
+.dashboard{
+  margin-top: 4%;
+}
+
+.flex-box{
+  display: flex;
+  gap: 10rem
+}
+
+.flex-box .form-container{
+  width: 50%
+}
+
+.dashboard .top{
+  margin-top: 1.2rem;
+}
+.expense-btn{
+  color:antiquewhite;
+  border: 0.1rem solid antiquewhite;
+  border-radius: 5px;
+  background-color: rgb(1, 21, 31, 0.5);
+  padding: 0.51rem;
+  font-weight: 700;
+  width: 11rem
+}
+
+.transactions{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 40%;
+  margin: 0 auto;
+  background-color: antiquewhite;
+  color:rgb(7, 83, 83);
+  padding: 2%;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.balance-cont{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.balance-cont > * {
+  margin: 0px 0; /* Adjust vertical margin between child elements */
+  padding: 0; /* Remove padding */
+}
+
+.balance-cont i{
+  font-size: 2rem;
+  gap: 0;
+  margin-left: 4px;
+}
+
+.in{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.1rem;
+}
+
+.in > * {
+  margin: 0px 0; /* Adjust vertical margin between child elements */
+  padding: 0; /* Remove padding */
+}
+
+.income-expense{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+.in i{
+  font-size: 2rem;
+  gap: 0;
+  margin-left: 4px;
+}
+
+.exp{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.1rem;
+}
+
+.exp > * {
+  margin: 0px 0; /* Adjust vertical margin between child elements */
+  padding: 0; /* Remove padding */
+}
+
+.exp i{
+  font-size: 2rem;
+  gap: 0;
+  margin-left: 4px;
+}
+
+.cards-cont{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cards-cont .form-container{
+  width: 40%;
+  align-items: flex-start;
+}
+.transaction-amt{
+  
+}
+
+
+.transaction-name{
+  font-weight: 500;
+}
+
+.cards-cont .form-container form{
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  height: 15rem
+}
+
+.cards{
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1.3rem;
+  color: rgb(8, 60, 102);
+  background-color: rgb(11, 192, 192, 0.7);
+  width: 10%;
+  text-transform: uppercase;
+}
+
+.flex-cards{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content:flex-start;
+}
+
+
+.income-cards{
+  background-color: rgb(123, 139, 153);
+  color: rgb(8, 60, 102)
+}
+
+.expense-cards{
+  background-color: rgba(197, 134, 134, 0.5);
+  color: rgb(95, 11, 11)
+}
+
+.icons{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+/*Forms*/
+.form-container{
+  border: 0.27rem solid antiquewhite;
+  border-radius: 0.24rem;
+  width: 36%;
+  padding: 4%;
+  margin: 3rem;
+  height: fit-content;
+}
+
+
+
+label{
+  color:antiquewhite;
+}
+
+
+.input-form{
+  display: block;
+  margin-bottom: 2rem;
+  border-radius: 0.1rem;
+  border: none;
+  padding: 0.42rem;
+  width: 90%;
+}
+
+.radio-label{
+  margin-right: 40px;
+}
+
+
+/*Buttons*/
+.continue-btn{
+  background-color: antiquewhite;
+  width: 11rem;
+  padding: 0.51rem;
+  margin-left: 1rem;
+  border-radius: 3px;
+  font-weight: 600;
+  background-image: linear-gradient(90deg, antiquewhite, antiquewhite 50%, rgb(2, 20, 20) 50%, rgb(2, 20, 20));
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.5s;
+  color:antiquewhite;
+  cursor: pointer;
+}
+
+.continue-btn:hover {
+  background-position: 0 0;
+  transition: background-position 0.5s;
+  color: rgb(2, 20, 20)
+}
+
+.add-button{
+  display: block;
+  background-color: antiquewhite;
+  width: 11rem;
+  padding: 0.51rem;
+  margin-left: 1rem;
+  border-radius: 3px;
+  font-weight: 600;
+  color: rgb(2, 20, 20);
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+
+
+/*Media queries*/
+@media (max-width:890px) {
+  /* Auth Page */
+
+.auth-page{
+  flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .Authentication{
+    margin-left: 2%;
+    width: 90%
+  }
+
+  .black{
+    left: 40;
+    top: -10;
+    margin-left: 10%;
+    margin-bottom: 5%;
+  }
+
+  .ipad{
+   margin-left: 10%;
+    margin-bottom: 5%
+  }
+
+  .auth-page-2{
+    margin-top: 70%;
+  }
+
+
+  .flex-box{
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .flex-box .form-container{
+    width: 70%;
+    padding: 6%
+  }
+  
+
+  .flex-box .illustrate{
+    width: 80%
+  }
+  /*Dashboard*/
+  .transactions{
+    width: 70%;
+  }
+
+  .dashboard{
+    margin-top: 6%;
+  }
+
+  .continue-btn{
+    width: 9rem
+  }
+
+  .flex-cards{
+    width: 90%;
+    max-width: 100%;
+    overflow: auto; /* Adds both horizontal and vertical scrollbars if content overflows */
+    white-space: nowrap;
+  }
+  
+}
+
+@media (max-width:490px) {
+  .transactions{
+    width: 100%;
+  }
+
+  
+.dashboard{
+  margin-top: 9%;
+}
+
+  .dashboard .form-container{
+    width: 70%;
+    padding: 6%
+  }
+
+  .cards{
+    width: 30%;
+  }
+
+  .continue-button{
+    width: 5rem
+  }
+  
+  .add-button{
+    width: 6rem
   }
 }
