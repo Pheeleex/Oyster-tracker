@@ -19,7 +19,7 @@ import NotFound from './Pages/NotFound';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route Path = "/" element = {<RootLayout />}>
+    <Route path = "/" element = {<RootLayout />}>
       <Route index element = { <Auth /> } />
       <Route path="Register" element = { <Register /> } />
       <Route path="Dashboard" element = { <Dashboard /> } />
