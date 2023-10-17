@@ -6,6 +6,7 @@ import React, { useState, useCallback } from "react";
 import { useUpdateTransactions } from "../Hooks/useUpdateTransactions";
 import { useGetWallet } from "../Hooks/useGetWallet";
 
+
 export default function Dashboard(){
     const { name, userId } = useGetUserInfo();
     const {addTransactions} = useAddTransactions()
