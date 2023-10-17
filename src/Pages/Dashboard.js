@@ -2,7 +2,7 @@ import { useGetUserInfo } from "../Hooks/useGetUserInfo";
 import { useAddTransactions } from "../Hooks/useAddTransactions";
 import { useGetWalletInfo } from "../Hooks/useGetwalletInfo";
 import { useRemoveTransaction } from "../Hooks/useRemoveTransaction";
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import { useUpdateTransactions } from "../Hooks/useUpdateTransactions";
 import { useGetWallet } from "../Hooks/useGetWallet";
 
@@ -24,6 +24,8 @@ export default function Dashboard(){
   
 
      // Function to populate form data when the "Edit" icon is clicked
+     const formContainerRef = useRef(null);
+
     const populateFormData = (transaction, id) => {
         setEditTransaction(transaction);
         settransactionName(transaction.transactionName); 
@@ -31,6 +33,14 @@ export default function Dashboard(){
         setTransactionType(transaction.transactionType); 
         console.log("Editing transaction ID:", id);
       console.log("Editing transaction data:", transaction);
+
+       // Scroll to the form container when the edit button is clicked
+    if (formContainerRef.current) {
+      formContainerRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
       };
 
 
@@ -137,7 +147,7 @@ export default function Dashboard(){
                         }
                 </div>
             </div>
-            <div className="form-container dashboard-form">
+            <div className="form-container dashboard-form" ref={formContainerRef}>
                 <form onSubmit={onSubmit}>
                 
                     <label htmlFor="walletName">Enter transaction Name</label>

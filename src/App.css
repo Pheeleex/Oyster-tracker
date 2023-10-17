@@ -423,7 +423,7 @@ label{
   
   
   .transactions{
-    width: 100%;
+    width: 104%;
   }
 
   
@@ -431,9 +431,10 @@ label{
   margin-top: 9%;
 }
 
-  .dashboard .form-container{
+  .dashboard-form{
     width: 70%;
-    padding: 6%
+    padding: 6%;
+    margin: 1rem
   }
 
   .flex-cards {
@@ -459,6 +460,7 @@ label{
 
   .flex-cards::-webkit-scrollbar {
     width: 6px;
+    background-color: transparent;
   }
   
 
@@ -476,4 +478,29 @@ label{
   .add-button{
     width: 6rem
   }
+
+  .radio-label{
+    margin-right: 13.5px;
+  }
+
+  
+.in i{
+  font-size: 1.5rem;
+  gap: 0;
+  margin-left: 4px;
+}
+
+.exp i{
+  font-size: 1.5rem;
+  gap: 0;
+  margin-left: 4px;
+}
+
+.in h3{
+  font-size: 18px;
+}
+
+.exp h3{
+  font-size: 18px;
+}
 }
