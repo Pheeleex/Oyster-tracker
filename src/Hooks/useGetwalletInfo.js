@@ -17,7 +17,6 @@ export function useGetWalletInfo() {
 
   useEffect(() => {
     if (!walletLoading) {
-      // Wait until wallet data is loaded from Firestore
       // Filter walletData by userId
       const userWallets = walletData.filter((wallet) => wallet.userId === userId);
 

@@ -12,7 +12,7 @@ export function useAddUserInfo(){
             userId,
             walletName,
             walletAmount,
-            createdAt: serverTimestamp() // Use a timestamp or any other format you prefer
+            createdAt: serverTimestamp() 
           };
           const docRef = await addDoc(walletsCollectionRef, walletData)
 

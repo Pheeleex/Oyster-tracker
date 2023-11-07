@@ -6,6 +6,7 @@ import { useGetWalletInfo } from "../Hooks/useGetwalletInfo";
 import { db } from "../Config/firebaseConfig";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
+
 import Finance from "../components/Images/Finance.png"
 
 export default function Register(){
@@ -16,6 +17,7 @@ export default function Register(){
     const [walletAmount, setWalletAmount] = useState("")
     const { addWalletInfo } = useAddUserInfo();
     const { loading } = useGetWalletInfo(); // Get loading status from useGetWalletInfo hook
+    const [error, setError] = useState(null);
     
 
     useEffect(() => {
@@ -33,26 +35,41 @@ export default function Register(){
         checkFirestoreForWalletData();
       }, [isAuth, loading, userId, navigate]);
 
-    const onSubmit = (e) => {
+      const onSubmit = (e) => {
         e.preventDefault();
+      // Validate walletName and walletAmount
+      if (!walletName || !walletAmount || isNaN(parseFloat(walletAmount))) {
+        setError("Invalid wallet name or wallet amount");
+        setTimeout(() => {
+          setError(null);
+        }, 5000); // Clear error message after 3 seconds
+        return;
+      }
+  
+      
+        // Call addWalletInfo only if validation passes
         addWalletInfo({
-        userId,
+          userId,
           walletName,
           walletAmount,
         });
+      
         console.log("Wallet Name:", walletName);
         console.log("Wallet Amount:", walletAmount);
-        setWalletName("");
-        setWalletAmount(0);
-        console.log({userId})
       
-        navigate("/dashboard")
+        // Reset form fields after submission
+        setWalletName("");
+        setWalletAmount("");
+        
+        navigate("/dashboard");
       };
-
+      
      // Store wallet information in local storage
   //localStorage.setItem("selectedWallet", JSON.stringify({ walletId, walletAmount}));
     return(
         <div>
+           {/* Display error message if there is an error */}
+      {error && <div className="error-message">{error}</div>}
             <div className="top">
                 <p> Hi {name},</p>
                 <h1> Create New Wallet </h1>
